@@ -87,8 +87,3 @@ def del_holding():
 
     return holding
 
-    
-del_holding()
-
-
-

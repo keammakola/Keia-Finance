@@ -28,12 +28,12 @@ def json_extractor(file_name, transaction_type):
 
     with open(json_path, "r") as file:
         data = json.load(file)
-
-    names = []
+    extracted = []
     for item in data:
-        if item["type"] == transaction_type:
-            name = item["name"]
-            if name not in names:
-                names.append(name)
+        if item[transaction_type] not in extracted:
+            extracted.append(item[transaction_type])
+        else:
+            continue
+    return extracted
+        
 
-    return names
